@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Person = new mongoose.Schema({
-  name: {
+  userName: {
     type: String,
     required: [true, "please Enter Name"],
     maxlength: [30, "Your Name cannot exceed 30 charachters"],
@@ -9,6 +9,10 @@ const Person = new mongoose.Schema({
   createAt: {
     type: Date,
     default: Date.now(),
+  },
+  balance: {
+    type: Number,
+    default: 0,
   },
 });
 module.exports = mongoose.model("Person", Person);
