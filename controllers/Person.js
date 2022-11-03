@@ -1,7 +1,7 @@
 const catchAsyncErrors = require("../middlewares/catchAsyncError");
 const Person = require("../models/Person");
 exports.getAllPersons = catchAsyncErrors(async (req, res, next) => {
-  const allPersons = await PersonSchema.find();
+  const allPersons = await Person.find();
   if (allPersons.length === 0) {
     res.status(200).json({
       success: false,
@@ -47,8 +47,8 @@ exports.withdraw = catchAsyncErrors(async (req, res, next) => {
     personFound.balanceAmount = newAmmount;
     personFound.save();
     res.status(200).json({
-      message: "amount Deposited",
-      totalAmount: personFound.balance,
+      message: "withdraw successful",
+      totalAmount: personFound.balanceAmount,
     });
   } else {
     res.status(400).json({

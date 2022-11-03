@@ -3,9 +3,9 @@ const validateWithdraw = (req, res, next) => {
   if (
     userId === undefined ||
     typeof userId !== "string" ||
-    userName.length === 0 ||
+    userId.length === 0 ||
     amount === undefined ||
-    typeof userId !== "number" ||
+    typeof amount !== "number" ||
     amount === 0
   ) {
     res.status(400).json({
@@ -15,4 +15,5 @@ const validateWithdraw = (req, res, next) => {
   }
   next();
 };
+
 module.exports = validateWithdraw;

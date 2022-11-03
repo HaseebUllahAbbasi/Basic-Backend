@@ -10,7 +10,7 @@ const Person = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  balance: {
+  balanceAmount: {
     type: Number,
     default: 0,
   },
